@@ -487,3 +487,20 @@ org.eclipse.jgit.errors.TransportException: https://github.com/Martintalla/Tp_in
 
 !ENTRY org.eclipse.egit.ui 4 0 2023-07-15 14:16:44.043
 !MESSAGE Can't connect to any repository: https://github.com/Martintalla/Tp_inetum_java (https://github.com/Martintalla/Tp_inetum_java: not authorized)
+
+!ENTRY org.eclipse.egit.core 4 0 2023-07-15 20:54:19.248
+!MESSAGE An exception occurred during push on URI https://github.com/Martintalla/Tp_inetum_java: https://github.com/Martintalla/Tp_inetum_java: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/Martintalla/Tp_inetum_java: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-07-15 20:54:19.359
+!MESSAGE Can't connect to any repository: https://github.com/Martintalla/Tp_inetum_java (https://github.com/Martintalla/Tp_inetum_java: not authorized)

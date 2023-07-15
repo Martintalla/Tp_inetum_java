@@ -94,6 +94,15 @@ public class StagiaireService implements IStagiaireService {
 				
 
 	}
+	
+	//Supprimer un Stagiaire par id
+	
+	public void removeStagiaire(int id) throws SQLException  {
+		String requete = "DELETE FROM Stagiaire WHERE id = ?";
+		PreparedStatement stmt = connection.prepareStatement(requete);
+		stmt.setInt(1, id);
+		stmt.executeUpdate();
+	}
 
 	@Override
 	public void addStagiaire(Stagiaire stagiaire) throws ClassNotFoundException, SQLException {

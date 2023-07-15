@@ -71,6 +71,14 @@ public interface IStagiaireService {
 	
 	Stagiaire getStagiaire(Integer id) throws ClassNotFoundException, SQLException;
 	
+	/**
+	 * supprime un stagiaire par id
+	 * @param id
+	 * @throws SQLException 
+	 */
+
+	void removeStagiaire(int id) throws SQLException;
+	
 	
 
 
