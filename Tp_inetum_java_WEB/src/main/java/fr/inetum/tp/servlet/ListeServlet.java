@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -44,29 +45,26 @@ public class ListeServlet extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/pages/liste.jsp").forward(request, response);
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String id = request.getParameter("id");
+		String action = request.getParameter("action");
 		try {
-			int id = Integer.parseInt(request.getParameter("id"));
 			
-			String action = request.getParameter("action");
-			
-			if (id !=0 && action.equalsIgnoreCase("delete")) {
-				serviceStag.removeStagiaire(id);	
-			}
-			
+//			if (Integer.parseInt(id) !=0 && action.equalsIgnoreCase("delete")) {
+//				serviceStag.removeStagiaire(Integer.parseInt(id));	
+//				System.out.println("action="+action+id);
+//			}
+			System.out.println("je suis dans la dopost");
 			Set<Stagiaire> stagiaires = new HashSet<>();
 			 stagiaires = serviceStag.allStagiaires();
 			 
 			 Set<Adresse> adresses = new HashSet<Adresse>();
 			 adresses = serviceAdrs.allAdresses();
-			 
+			 System.out.println("je suis dans la dopost");
+			 for (Stagiaire elements : stagiaires)
+					System.out.println(elements.getEmail());
 			 request.setAttribute("stagiaires", stagiaires);
-			 request.setAttribute(action, action);
+			 request.setAttribute("adresses", adresses);
 		} catch (NumberFormatException | ClassNotFoundException | SQLException e) {
 			
 			List<String> erreurs = new ArrayList<String>();
@@ -79,8 +77,16 @@ public class ListeServlet extends HttpServlet {
 			}
 			request.setAttribute("erreurs", erreurs);
 			}
-		doGet(request, response);
+	
+		request.getRequestDispatcher("WEB-INF/pages/liste.jsp").forward(request, response);
 		 
 	}
 
+	
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		//doGet(request, response);
+		
 }
+}	

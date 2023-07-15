@@ -32,7 +32,7 @@ private Connection connection;
 	public Set<Adresse> allAdresses() throws ClassNotFoundException, SQLException{
 		Set<Adresse> adresses = new HashSet<>();
 		
-		String requete = "SELECT * FROM table_tp_adresse";
+		String requete = "SELECT * FROM adresse";
 		PreparedStatement stmt = this.connection.prepareStatement(requete);
 		ResultSet rs = stmt.executeQuery();
 		

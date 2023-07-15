@@ -233,7 +233,7 @@ public class StagiaireService implements IStagiaireService {
 	public Set<Stagiaire> allStagiaires(Adresse adresse) throws ClassNotFoundException, SQLException{
 		Set<Stagiaire> stagiaires = new HashSet<>();
 		
-		String requete = String.format("SELECT * FROM table_tp_admin WHERE adresseid='%s'",adresse.getId());
+		String requete = String.format("SELECT * FROM stagiaire WHERE adresseid='%s'",adresse.getId());
 		PreparedStatement stm = this.connection.prepareStatement(requete);
 		ResultSet rs = stm.executeQuery();
 		
