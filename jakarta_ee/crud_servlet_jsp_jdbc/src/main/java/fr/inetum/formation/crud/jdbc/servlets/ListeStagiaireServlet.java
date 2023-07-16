@@ -42,8 +42,7 @@ public class ListeStagiaireServlet extends HttpServlet {
 			}			
 			List<Stagiaire> stagiaires = new ArrayList<>();
 			stagiaires = service.allStagiaires();
-			for (Stagiaire elements : stagiaires)
-				System.out.println(elements.getEmail());
+				System.out.println("id"+id);
 			request.setAttribute("stagiaires", stagiaires);
 		} catch (ClassNotFoundException | SQLException e) {
 			List<String> erreurs = new ArrayList<>();

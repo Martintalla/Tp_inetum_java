@@ -19,7 +19,7 @@
 				<div class="mb-3">
 					<label for="login" class="form-label">Email</label> <input
 						type="email" class="form-control" id="login" name="email"
-						placeholder="Saisir votre login au format @email">
+						placeholder="martin@inetum.fr">
 				</div>
 				<div class="mb-3">
 					<label for="mdp" class="form-label">Mot de passe</label> <input

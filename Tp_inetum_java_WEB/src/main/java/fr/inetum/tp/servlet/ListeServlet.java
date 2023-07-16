@@ -48,13 +48,13 @@ public class ListeServlet extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String action = request.getParameter("action");
+		
 		try {
 			
-//			if (Integer.parseInt(id) !=0 && action.equalsIgnoreCase("delete")) {
-//				serviceStag.removeStagiaire(Integer.parseInt(id));	
-//				System.out.println("action="+action+id);
-//			}
-			System.out.println("je suis dans la dopost");
+			if (id != null &&Integer.parseInt(id) !=0 && action.equalsIgnoreCase("delete")) {
+				serviceStag.removeStagiaire(Integer.parseInt(id));	
+				System.out.println("action="+action+id);
+			}
 			Set<Stagiaire> stagiaires = new HashSet<>();
 			 stagiaires = serviceStag.allStagiaires();
 			 

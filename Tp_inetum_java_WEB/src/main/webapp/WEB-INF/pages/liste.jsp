@@ -29,9 +29,9 @@
 			</div>
 		</c:if>
 
-		<p>
+		<!-- <p>
 			<a href="ajouter" class="btn btn-primary">Ajouter un stagiaire</a>
-		</p>
+		</p> -->
 		<table class="table table-hover table-bordered">
 			<thead class="table-dark text-center text-uppercase">
 				<tr>
