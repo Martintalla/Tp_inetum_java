@@ -87,4 +87,7 @@ public interface IStagiaireService {
 	 */
 
 	public boolean verifyCredentials(String email, String mdp);
+	
+	
+	public String verifyRole(String email, String mdp);
 }

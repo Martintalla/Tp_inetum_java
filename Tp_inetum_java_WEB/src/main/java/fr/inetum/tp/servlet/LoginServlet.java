@@ -51,9 +51,15 @@ public class LoginServlet extends HttpServlet {
 		
 		if (serviceStag.verifyCredentials(email, mdp)==true) {
 			
-			System.out.println("je suis dans la post");
-			
-			response.sendRedirect("liste");
+			if (serviceStag.verifyRole(email, mdp).equalsIgnoreCase("ADMIN")) {
+				System.out.println(serviceStag.verifyRole(email, mdp));
+				
+				response.sendRedirect("liste");
+				
+			}else if (serviceStag.verifyRole(email, mdp).equalsIgnoreCase("USER")){
+				System.out.println(serviceStag.verifyRole(email, mdp));
+				response.sendRedirect("liste_user");
+			}
 			
 		}else {
 			request.setAttribute("uknownUser", "login et/ou mot de passe incorrect");

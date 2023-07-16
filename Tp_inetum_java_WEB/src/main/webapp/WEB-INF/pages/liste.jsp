@@ -63,18 +63,15 @@ if(user == null){
 						<td>${ stagiaire.age}ans</td>
 						<td>${ stagiaire.email}</td>
 						<td>${ stagiaire.role}</td>
-						<%-- <td> < c:out value="${stagiaire.adresseId }"/></td> --%>
-						<%-- <td>${stagiaire.adresse.voie }</td>
-						<td>${stagiaire.adresse.ville }</td> --%>
-						<%-- <c:if test="${role = ADMIN }">
-						<td><form><a href="" class = "btn-btn-warning" data-bs-toggle="modal"
-						 "btn-btn-warning" data-bs-target="#UpdateModal{stagiaire.id}"> Modifier</a><form></td>
-						 <td><form><a href="" class = "btn-btn-danger" data-bs-toggle="modal"
-						 "btn-btn-warning" data-bs-target="#DeleteModal{stagiaire.id}"> Supprimer</a><form></td>
-						</c:if> --%>
-						<%-- <td><a href="liste?id=${stagiaire.id }"
+						<%-- <%-- <td> < c:out value="${stagiaire.adresseId }"/></td>
+						<td>${stagiaire.adresse.voie }</td>
+						<td>${stagiaire.adresse.ville }</td>
+						<c:if test="${role = ADMIN }">
+						<td><form><a href="" class = "btn-btn-warning" data-bs-toggle="modal" --%>
+						 
+						<td><a href="liste?id=${stagiaire.id }"
 							class="btn btn-danger">Supprimer</a></td>
-						<td><a href="" class="btn btn-warning">Mofidier</a></td> --%>
+						<td><a href="" class="btn btn-warning">Mofidier</a></td> 
 					</tr>
 				</c:forEach>
 			</tbody>
