@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import = "fr.inetum.tp.entities.Users" %>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+Users user = (Users) request.getSession().getAttribute("user");
+if(user == null){
+	response.sendRedirect("login");
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,12 +60,12 @@
 						<td>${ stagiaire.id}</td>
 						<td>${ stagiaire.prenom}</td>
 						<td>${ stagiaire.ddn}</td>
-						<td>${ stagiaire.age} ans</td>
+						<td>${ stagiaire.age}ans</td>
 						<td>${ stagiaire.email}</td>
 						<td>${ stagiaire.role}</td>
 						<%-- <td> < c:out value="${stagiaire.adresseId }"/></td> --%>
 						<%-- <td>${stagiaire.adresse.voie }</td>
-						<td>${stagiaire.adresse.ville }</td> --%> 
+						<td>${stagiaire.adresse.ville }</td> --%>
 						<%-- <c:if test="${role = ADMIN }">
 						<td><form><a href="" class = "btn-btn-warning" data-bs-toggle="modal"
 						 "btn-btn-warning" data-bs-target="#UpdateModal{stagiaire.id}"> Modifier</a><form></td>

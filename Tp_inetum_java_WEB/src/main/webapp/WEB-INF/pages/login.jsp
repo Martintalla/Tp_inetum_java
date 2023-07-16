@@ -32,6 +32,13 @@
 				</div>
 			</form>
 		</div>
+		<%
+		String uknownUser = (String) request.getAttribute("uknownUser");
+						if (uknownUser !=null)	{
+							%>
+		<div class="error alert alert-danger"> ${uknownUser }</div>
+						<% }%>
+		
 	</div>
 </body>
 </html>

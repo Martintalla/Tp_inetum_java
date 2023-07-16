@@ -1,5 +1,6 @@
 package fr.inetum.tp.services;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -13,10 +14,14 @@ import fr.inetum.tp.connection.MaConnexion;
 import fr.inetum.tp.entities.Adresse;
 import fr.inetum.tp.entities.Stagiaire;
 import fr.inetum.tp.utils.AppUtil;
+import jakarta.servlet.ServletException;
 
 public class StagiaireService implements IStagiaireService {
 	
 	private Connection connection;	
+	public String admin;
+	public String user;
+	public String error;
 	//Connexion à la BDD
 	
 	public StagiaireService() throws ClassNotFoundException, SQLException {
@@ -140,5 +145,28 @@ public class StagiaireService implements IStagiaireService {
 			
 		
 	}
+	
+	public boolean verifyCredentials(String email, String mdp) {
+		try {
+			String requete = "SELECT * FROM Stagiaire WHERE email=? AND mdp= ?";
+			PreparedStatement stmt = connection.prepareStatement(requete); 
+			
+			stmt.setString(1, email);
+			stmt.setString(2, mdp);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				
+			//Les identifiants sont valides
+				return true;
 
+}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//Les identifiants sont invalides
+		return false;
+ }
 }

@@ -79,7 +79,12 @@ public interface IStagiaireService {
 
 	void removeStagiaire(int id) throws SQLException;
 	
-	
+	/**
+	 * Vérifie si un utilisateur est présent dans la base de données
+	 * @param email
+	 * @param mdp
+	 * @return
+	 */
 
-
+	public boolean verifyCredentials(String email, String mdp);
 }
