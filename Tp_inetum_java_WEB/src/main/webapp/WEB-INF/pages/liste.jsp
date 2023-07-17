@@ -63,11 +63,11 @@ if(user == null){
 						<td>${ stagiaire.age}ans</td>
 						<td>${ stagiaire.email}</td>
 						<td>${ stagiaire.role}</td>
-						<%-- <%-- <td> < c:out value="${stagiaire.adresseId }"/></td>
-						<td>${stagiaire.adresse.voie }</td>
+						<%-- <%-- <td> < c:out value="${stagiaire.adresseId }"/></td>--%>
+						<td>${stagiaire.adresse.nomVoie }</td>
 						<td>${stagiaire.adresse.ville }</td>
-						<c:if test="${role = ADMIN }">
-						<td><form><a href="" class = "btn-btn-warning" data-bs-toggle="modal" --%>
+						<%-- <c:if test="${role = ADMIN }">--%>
+						<%--<td><form><a href="" class = "btn-btn-warning" data-bs-toggle="modal" --%>
 						 
 						<td><a href="liste?id=${stagiaire.id }"
 							class="btn btn-danger">Supprimer</a></td>

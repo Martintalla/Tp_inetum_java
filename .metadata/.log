@@ -1016,3 +1016,44 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:07:20.608
 !MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.egit.core 4 0 2023-07-17 00:08:29.572
+!MESSAGE An exception occurred during push on URI https://github.com/Martintalla/Tp_inetum_java: https://github.com/Martintalla/Tp_inetum_java: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/Martintalla/Tp_inetum_java: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-07-17 00:08:29.577
+!MESSAGE Can't connect to any repository: https://github.com/Martintalla/Tp_inetum_java (https://github.com/Martintalla/Tp_inetum_java: not authorized)
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:09:27.156
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:10:26.763
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:11:04.138
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:18:00.745
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.jst.server.core 4 0 2023-07-17 00:30:23.259
+!MESSAGE Could not launch in profiling mode because no profilers are configured.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 00:40:04.502
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 06:02:32.141
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-07-17 06:21:33.820
+!MESSAGE Server Tomcat v10.1 Server at localhost failed to start.

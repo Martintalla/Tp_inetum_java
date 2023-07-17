@@ -43,7 +43,7 @@ public class StagiaireService implements IStagiaireService {
 	public Set<Stagiaire> allStagiaires() throws ClassNotFoundException, SQLException {
 		Set<Stagiaire> stagiaires = new HashSet<>();
 
-		String requete = "SELECT * FROM Stagiaire";
+		String requete = "SELECT * FROM Stagiaire st JOIN Adresse ad ON (st.adresseId = ad.id) ";
 		PreparedStatement stmt = this.connection.prepareStatement(requete);
 		ResultSet rs = stmt.executeQuery();
 
@@ -55,6 +55,11 @@ public class StagiaireService implements IStagiaireService {
 			LocalDate ddn = rs.getDate("ddn").toLocalDate();
 			String role = rs.getString("role");
 			Integer adresseId = rs.getInt("adresseId");
+			String nomVoie = rs.getString("nomVoie");
+			String  ville = rs.getString("ville");
+			String codePostal = rs.getString("codePostal");
+			
+			Adresse adresse = new Adresse(nomVoie, ville, codePostal);
 			Stagiaire stagiaire = new Stagiaire(id, adresseId, prenom, email, mdp, ddn, role);
 			stagiaires.add(stagiaire);
 		}
